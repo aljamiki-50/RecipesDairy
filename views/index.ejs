@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Notes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Recipe Notes</h1>
+            <ul class="nav-links">
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Our Recipes</h2>
+        <h2><a href="/Addreceipes">Add your own Recipe</a></h2>
+
+
+
+        <div class="grid">
+            <% for (var i=0; i <receipes.length; i++) { %>
+                <div class="recipe-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Spaghetti Carbonara">
+                    <div class="content">
+                        <h3><%= receipes[i].title %></h3>
+                        <h4>Ingredients</h4>
+                        <p><%= receipes[i].ingredients %></p>
+                        <h4>Instructions</h4>
+                        <p><%= receipes[i].instructions %></p>
+
+                    </div>
+                </div>
+                <% } %>
+
+                    <!-- <div class="recipe-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Chicken Curry">
+                    <div class="content">
+                        <h3>Chicken Curry</h3>
+                        <h4>Ingredients</h4>
+                        <p>Chicken, Curry Powder, Coconut Milk, Onions, Garlic, Ginger, Salt</p>
+                        <h4>Instructions</h4>
+                        <p>1. Sauté onions, garlic, and ginger. 2. Add chicken and curry powder. 3. Pour coconut milk.
+                            4.
+                            Simmer until chicken is cooked.</p>
+                    </div>
+                </div> -->
+                    <!-- <div class="recipe-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Chocolate Cake">
+                    <div class="content">
+                        <h3>Chocolate Cake</h3>
+                        <h4>Ingredients</h4>
+                        <p>Flour, Sugar, Cocoa Powder, Baking Powder, Eggs, Milk, Butter, Vanilla Extract</p>
+                        <h4>Instructions</h4>
+                        <p>1. Mix dry ingredients. 2. Add wet ingredients. 3. Bake at 350°F for 30 minutes.</p>
+                    </div>
+                </div> -->
+        </div>
+    </div>
+</body>
+<script src="/db.js"></script>
+<script src="/app.js"></script>
+<script src="./script.js"></script>
+
+</html>
