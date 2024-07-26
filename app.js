@@ -104,44 +104,44 @@ app.get("/", async (req, res) => {
 
 
 // Route to get all recipes
-app.get("/recipes", async (req, res) => {
-  try {
-    const recipes = await GetAllData();
-    //  res.send(recipes[0].title);
-    // res.render("index.ejs", { receipes: recipes });
-    res.render("index", { receipes: recipes });
-  } catch (error) {
-    res.status(500).send("Error retrieving recipes");
-  }
-});
+// app.get("/recipes", async (req, res) => {
+//   try {
+//     const recipes = await GetAllData();
+//     //  res.send(recipes[0].title);
+//     // res.render("index.ejs", { receipes: recipes });
+//     res.render("index", { receipes: recipes });
+//   } catch (error) {
+//     res.status(500).send("Error retrieving recipes");
+//   }
+// });
 
 // Route to add a new recipe (renders form)
-app.get("/Addreceipes", (req, res) => {
-  res.render("addRecipe");
-});
+// app.get("/Addreceipes", (req, res) => {
+//   res.render("addRecipe");
+// });
 
 // Route to get a specific recipe by ID
-app.get("/recipes/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-    const recipe = await getbyid(id);
-    res.render("recipeDetail", { recipe: recipe });
-  } catch (error) {
-    res.status(500).send("Error retrieving recipe");
-  }
-});
+// app.get("/recipes/:id", async (req, res) => {
+//   try {
+//     const id = req.params.id;
+//     const recipe = await getbyid(id);
+//     res.render("recipeDetail", { recipe: recipe });
+//   } catch (error) {
+//     res.status(500).send("Error retrieving recipe");
+//   }
+// });
 
 // Route to create a new recipe
-app.post("/recipes", async (req, res) => {
-  try {
-    const { title, ingredients, instructions } = req.body;
-    await AddRecipee(title, ingredients, instructions);
-    // res.render("index")
-    res.redirect("/recipes");
-  } catch (error) {
-    res.status(500).send("Error adding recipe");
-  }
-});
+// app.post("/recipes", async (req, res) => {
+//   try {
+//     const { title, ingredients, instructions } = req.body;
+//     await AddRecipee(title, ingredients, instructions);
+//     // res.render("index")
+//     res.redirect("/recipes");
+//   } catch (error) {
+//     res.status(500).send("Error adding recipe");
+//   }
+// });
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -156,4 +156,6 @@ app.listen(port, () => {
 });
 
 export default app; // Export the app for Vercel
+// export const handler = serverless(app);
+
 
