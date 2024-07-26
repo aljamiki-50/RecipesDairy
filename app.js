@@ -88,6 +88,21 @@ app.use(express.static("public"));
 // Setting EJS as the view engine
 app.set("view engine", "ejs");
 
+// test test
+app.get("/", async (req, res) => {
+
+  try {
+    const recipes = await GetAllData();
+    //  res.send(recipes[0].title);
+    // res.render("index.ejs", { receipes: recipes });
+    res.render("index", { receipes: recipes });
+  } catch (error) {
+    res.status(500).send("Error retrieving recipes");
+  }
+});
+  
+
+
 // Route to get all recipes
 app.get("/recipes", async (req, res) => {
   try {
